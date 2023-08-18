@@ -9,5 +9,16 @@ package modelo;
  * @author jerson
  */
 public enum TipoToken {
-    
+      IDENTIFICADOR,
+    OPERADOR_ARITMETICO,
+    OPERADOR_COMPARACION,
+    OPERADOR_LOGICO,
+    OPERADOR_ASIGANCION,
+    PALABRA_CLAVE,
+    CONSTANTE_ENTERA,
+    CONSTANTE_DECIMAL,
+    CONSTANTE_CADENA,
+    CONSTANTE_BOOLEANA,
+    COMENTARIO,
+    OTRO
 }
