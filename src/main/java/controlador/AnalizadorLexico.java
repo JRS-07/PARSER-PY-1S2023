@@ -46,7 +46,7 @@ public class AnalizadorLexico {
             String lexema = diccionario.coincidenciasDiccionario(cadigoRes);
 
             if (esTokenConocido(lexema)) {
-
+-
                 tokens.add(analizarTokenConocido(lexema));
                 actualizarPosicion(lexema);
 
@@ -55,7 +55,7 @@ public class AnalizadorLexico {
                 if (token.getTipo() == TipoToken.ERROR) {
                     errores.add(token);
                 } else {
-                    tokens.add(analizarNumero());
+                    tokens.add(token);
                 }
 
             } else if (caracterActual == '#') {
@@ -69,7 +69,7 @@ public class AnalizadorLexico {
                 if (token.getTipo() == TipoToken.ERROR) {
                     errores.add(token);
                 } else {
-                    tokens.add(analizarCadena());
+                    tokens.add(token);
                 }
 
             } else if (Character.isLetter(caracterActual) || caracterActual == '_') {
@@ -84,13 +84,45 @@ public class AnalizadorLexico {
 //***************************************************************************************
 
     public Token analizarNumero() {
+        String lexema = obtenerNumero();
+        TipoToken tipoToken = determinarTipoNumero(lexema);
+        return new Token(tipoToken, "", lexema, lineaActual, columnaActual);
+    }
+
+  
+        public TipoToken determinarTipoNumero(String lexema) {
+        if (lexema.contains(".")) {
+            if (lexema.indexOf('.') != lexema.lastIndexOf('.')) {
+                return TipoToken.ERROR; // Más de un punto decimal, considerado error
+            }
+            try {
+                Double.parseDouble(lexema); // Intenta convertir a número decimal
+                return TipoToken.DECIMAL;
+            } catch (NumberFormatException e) {
+                return TipoToken.ERROR; // No es un número decimal válido
+            }
+        } else {
+            try {
+                Integer.parseInt(lexema); // Intenta convertir a número entero
+                return TipoToken.ENTERO;
+            } catch (NumberFormatException e) {
+                return TipoToken.ERROR; // No es un número entero válido
+            }
+        }
+    }
+    public String obtenerNumero() {
         StringBuilder lexemaBuilder = new StringBuilder();
+        boolean decimalPuntoEncontrado = false;
 
         while (!esFinDeArchivo()) {
-            char caracterActual = obtenerCaracterActual();
+            char caracterActual = codigo.charAt(indice);
 
-            if (Character.isDigit(caracterActual) || caracterActual == '.') {
+            if (Character.isDigit(caracterActual)) {
                 lexemaBuilder.append(caracterActual);
+                avanzarPosicion();
+            } else if (caracterActual == '.' && !decimalPuntoEncontrado) {
+                lexemaBuilder.append(caracterActual);
+                decimalPuntoEncontrado = true;
                 avanzarPosicion();
             } else {
                 break;
@@ -98,31 +130,20 @@ public class AnalizadorLexico {
         }
 
         String lexema = lexemaBuilder.toString();
-        TipoToken tipoToken = determinarTipoNumero(lexema);
-
-        // validamos si el numero decimal no es completado ej: 4., 5. etc
-        if (tipoToken == TipoToken.CONSTANTE_DECIMAL && lexema.contains(".")) {
-            // Crear token de tipo error para números mal formados
-            return new Token(TipoToken.ERROR, "", lexema, lineaActual, columnaActual);
+        
+               // Verificar si es un número decimal incompleto (por ejemplo: 4.)
+        if (lexema.endsWith(".")) {
+            lexema = "Error : " + lexema;
         }
 
-        return new Token(tipoToken, "", lexema, lineaActual, columnaActual);
-
-    }
-
-    public TipoToken determinarTipoNumero(String lexema) {
-        if (lexema.contains(".")) {
-            return TipoToken.CONSTANTE_DECIMAL;
-        } else {
-            return TipoToken.CONSTANTE_ENTERO;
-        }
+        return lexema;
     }
 //************************************************************
 
     public Token analizarTokenConocido(String lexema) {
 
         TipoToken tipoToken = diccionario.getDiccionario().get(lexema); // Buscar el tipo de token en el diccionario
-        return new Token(tipoToken, "", lexema, lineaActual, columnaActual);
+        return new Token(tipoToken, lexema, lexema, lineaActual, columnaActual);
     }
 
     public boolean esTokenConocido(String lexema) {

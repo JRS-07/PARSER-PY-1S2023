@@ -29,6 +29,13 @@ public class Token {
         this.patron = patron;
     }
 
+     public String getPatron() {
+        return patron;
+    }
+
+    public void setPatron(String patron) {
+        this.patron = patron;
+    }
     // Getters y setters
     public String getLexema() {
         return lexema;
@@ -46,19 +53,11 @@ public class Token {
         return columna;
     }
 
-    public String getPatron() {
-        return patron;
-    }
-
-    public void setPatron(String patron) {
-        this.patron = patron;
-    }
-
     @Override
     public String toString() {
-        return "Token{" + "lexema=" + lexema + ", linea=" + linea + ", columna=" + columna + ", patron=" + patron + '}';
+        return "Token{" + "lexema=" + lexema + ", tipo=" + tipo + ", linea=" + linea + ", columna=" + columna + ", patron=" + patron + '}';
     }
-    
+
        public String getReport() {
         return String.format("Tipo Token: %s | Patron: %s | Lexema: %s | Linea: %d | Columna: %d ",
                 tipo, patron, lexema, linea, columna);
