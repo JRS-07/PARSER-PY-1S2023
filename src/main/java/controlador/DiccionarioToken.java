@@ -36,31 +36,31 @@ public class DiccionarioToken {
         this.diccionario.put(",", TipoToken.DELIMITADORES);
 
         //Aritmeticos
-        this.diccionario.put("+", TipoToken.OPERADOR_ARITMETICO);
-        this.diccionario.put("-", TipoToken.OPERADOR_ARITMETICO);
-        this.diccionario.put("**", TipoToken.OPERADOR_ARITMETICO);
-        this.diccionario.put("/", TipoToken.OPERADOR_ARITMETICO);
-        this.diccionario.put("//", TipoToken.OPERADOR_ARITMETICO);
-        this.diccionario.put("%", TipoToken.OPERADOR_ARITMETICO);
-        this.diccionario.put("*", TipoToken.OPERADOR_ARITMETICO);
+        this.diccionario.put("+", TipoToken.ARITMETICO);
+        this.diccionario.put("-", TipoToken.ARITMETICO);
+        this.diccionario.put("**", TipoToken.ARITMETICO);
+        this.diccionario.put("/", TipoToken.ARITMETICO);
+        this.diccionario.put("//", TipoToken.ARITMETICO);
+        this.diccionario.put("%", TipoToken.ARITMETICO);
+        this.diccionario.put("*", TipoToken.ARITMETICO);
 
         //Comparacion
-        this.diccionario.put("==", TipoToken.OPERADOR_COMPARACION);
-        this.diccionario.put("!=", TipoToken.OPERADOR_COMPARACION);
-        this.diccionario.put(">", TipoToken.OPERADOR_COMPARACION);
-        this.diccionario.put("<", TipoToken.OPERADOR_COMPARACION);
-        this.diccionario.put(">=", TipoToken.OPERADOR_COMPARACION);
-        this.diccionario.put("<=", TipoToken.OPERADOR_COMPARACION);
+        this.diccionario.put("==", TipoToken.COMPARACION);
+        this.diccionario.put("!=", TipoToken.COMPARACION);
+        this.diccionario.put(">", TipoToken.COMPARACION);
+        this.diccionario.put("<", TipoToken.COMPARACION);
+        this.diccionario.put(">=", TipoToken.COMPARACION);
+        this.diccionario.put("<=", TipoToken.COMPARACION);
 
         //Logicos ***
-        this.diccionario.put("and", TipoToken.OPERADOR_LOGICO);
-        this.diccionario.put("or", TipoToken.OPERADOR_LOGICO);
-        this.diccionario.put("not", TipoToken.OPERADOR_LOGICO);
+        this.diccionario.put("and", TipoToken.LOGICO);
+        this.diccionario.put("or", TipoToken.LOGICO);
+        this.diccionario.put("not", TipoToken.LOGICO);
 
         //Asignacion
-        this.diccionario.put("=", TipoToken.OPERADOR_ASIGANCION);
-        this.diccionario.put("*=", TipoToken.OPERADOR_ASIGANCION);
-        this.diccionario.put("-=", TipoToken.OPERADOR_ASIGANCION);
+        this.diccionario.put("=", TipoToken.ASIGANCION);
+        this.diccionario.put("*=", TipoToken.ASIGANCION);
+        this.diccionario.put("-=", TipoToken.ASIGANCION);
 
         //palabras reservadas ***
         this.diccionario.put("while", TipoToken.PALABRA_RESERVADA);
@@ -71,8 +71,8 @@ public class DiccionarioToken {
         this.diccionario.put("else", TipoToken.PALABRA_RESERVADA);
 
         //constantes  Booleanas ***
-        this.diccionario.put("True", TipoToken.CONSTANTE_BOOLEANA);
-        this.diccionario.put("False", TipoToken.CONSTANTE_BOOLEANA);
+        this.diccionario.put("True", TipoToken.BOOLEAN);
+        this.diccionario.put("False", TipoToken.BOOLEAN);
       
     }
     

@@ -4,7 +4,8 @@
  */
 package test;
 
-import controlador.Analizador;
+import Vista.VentanaPrincipal1;
+
 import controlador.AnalizadorLexico;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -53,6 +54,11 @@ public class test {
             for (Token error : errores) {
                 System.out.println(error.getReport());
             }
+    //****************************************************************************************        
+            VentanaPrincipal1 ventana = new VentanaPrincipal1();
+        ventana.setVisible(true);
+        String codigoFuente = "/home/jerson/Documentos/ejemplo archivo de entrada.txt";
+        analizador.analizarCodigo();
         } catch (FileNotFoundException ex) {
 
         }
