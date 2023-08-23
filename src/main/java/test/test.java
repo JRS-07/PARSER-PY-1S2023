@@ -4,10 +4,20 @@
  */
 package test;
 
+import Vista.VentanaPrincipal1;
+
+import java.io.IOException;
+
 /**
  *
  * @author jerson
  */
 public class test {
-    
+
+    public static void main(String[] args) throws IOException {
+
+        VentanaPrincipal1 ventana = new VentanaPrincipal1();
+        ventana.setVisible(true);
+
+    }
 }
