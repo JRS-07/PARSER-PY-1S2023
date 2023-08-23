@@ -22,5 +22,5 @@ public enum TipoToken {
     COMENTARIO,
     DESCONOCIDO,
     DELIMITADORES,
-    ERROR
+    ERROR,
 }

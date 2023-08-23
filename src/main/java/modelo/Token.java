@@ -11,7 +11,7 @@ package modelo;
 public class Token {
 
     private String lexema;
-    private String descripcion;
+   
     private TipoToken tipo;  //Enumerador que define los diferentes tipos de tokens que el analizador puede reconocer.
     private int linea;
     private int columna;

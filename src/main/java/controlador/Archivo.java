@@ -4,14 +4,20 @@
  */
 package controlador;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.swing.JTextArea;
-
+import java.util.List;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
+import modelo.Token;
 
 /**
  *
@@ -19,27 +25,30 @@ import javax.swing.JTextArea;
  */
 public class Archivo {
 
-     private ArrayList<String> listaLineasArchivo = new ArrayList();
-    
-    public Archivo(File archivo){
+  //  private ArrayList<String> listaLineasArchivo = new ArrayList();
+private String contenidoArchivo;
+
+    public Archivo(File archivo) {
         this.listarLineasArchivo(archivo);
     }
-    
-    public Archivo(){
-        
+
+    public Archivo() {
+
     }
 
     /**
      * Lista las de un archivo.
-     * @param archivo 
+     *
+     * @param archivo
      */
     private void listarLineasArchivo(File archivo) {
-
+        StringBuilder contenido = new StringBuilder();
         try {
+            
             BufferedReader lector = new BufferedReader(new FileReader(archivo));
             String linea = lector.readLine();
             while (linea != null) {
-                listaLineasArchivo.add(linea);
+               contenido.append(linea).append("\n");
                 linea = lector.readLine();
             }
             lector.close();
@@ -48,16 +57,54 @@ public class Archivo {
         } catch (IOException ex) {
             //
         }
+        contenidoArchivo = contenido.toString();
     }
 
-    /**
-     * Muestra en JTextArea indicado, las lineas de un archivo.
-     * @param taCodigoFuente 
-     */
-    public void mostrarLineas(JTextArea taCodigoFuente) {
+  
+    
+  public void mostrarContenidoColoreado(JTextPane taCodigoFuente, DiccionarioColor diccionarioColor) {
         taCodigoFuente.setText("");
-        for (String linea : listaLineasArchivo) {
-            taCodigoFuente.append(linea+"\n");
+        StyledDocument doc = taCodigoFuente.getStyledDocument();
+
+        AnalizadorLexico analizador = new AnalizadorLexico(contenidoArchivo);
+        List<Token> listaTokens = analizador.getTokens();
+        insertarTextoColoreado(doc, contenidoArchivo, listaTokens, diccionarioColor);
+    }
+
+    private void insertarTextoColoreado(StyledDocument doc, String texto, List<Token> listaTokens, DiccionarioColor diccionarioColor) {
+        int posicion = 0;
+
+        for (Token token : listaTokens) {
+            int inicioToken = contenidoArchivo.indexOf(token.getLexema(), posicion);
+            int finToken = inicioToken + token.getLexema().length();
+            AttributeSet attrs = obtenerAtributosToken(token, diccionarioColor);
+
+            if (inicioToken >= 0) {
+                insertarTextoColoreado(doc, texto.substring(posicion, inicioToken), null);
+                insertarTextoColoreado(doc, token.getLexema(), attrs);
+                posicion = finToken;
+            }
+        }
+
+        if (posicion < texto.length()) {
+            insertarTextoColoreado(doc, texto.substring(posicion), null);
         }
     }
+
+    private AttributeSet obtenerAtributosToken(Token token, DiccionarioColor diccionarioColor) {
+        SimpleAttributeSet attrs = new SimpleAttributeSet();
+        Color color = diccionarioColor.getColorForToken(token.getTipo());
+        StyleConstants.setForeground(attrs, color);
+        return attrs;
+    }
+
+    private void insertarTextoColoreado(StyledDocument doc, String texto, AttributeSet attrs) {
+        try {
+            doc.insertString(doc.getLength(), texto, attrs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
 }

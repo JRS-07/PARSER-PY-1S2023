@@ -5,7 +5,7 @@
 package Vista;
 
 import controlador.AnalizadorLexico;
-import controlador.Archivo;
+import controlador.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,19 +16,12 @@ import java.io.IOException;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.*;
-import javax.swing.text.StyleContext;
-import modelo.TipoToken;
-import modelo.Token;
-import javax.swing.text.DefaultStyledDocument;
-
-import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
-import javax.swing.text.StyleContext;
+import modelo.Token;
 import javax.swing.text.StyledDocument;
+
 /**
  *
  * @author jerson
@@ -39,11 +32,10 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
      * Creates new form VentanaPricnipal
      */
     private StyledDocument styledDocument;
-    
+
     public VentanaPrincipal1() {
         initComponents();
-        
-              
+
     }
 
     /**
@@ -61,8 +53,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         btnGenerarGrafica = new javax.swing.JButton();
         btnAyuda = new javax.swing.JButton();
         btnAcercaDe = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        taCodigoFuente = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         taErrores = new javax.swing.JTextArea();
         lbErrores = new javax.swing.JLabel();
@@ -71,9 +61,12 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTableReportes = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        taCodigoFuente = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray));
 
         lbTitulo.setFont(new java.awt.Font("Inconsolata Semi Condensed ExtraBold", 0, 36)); // NOI18N
@@ -110,10 +103,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
                 btnAcercaDeActionPerformed(evt);
             }
         });
-
-        taCodigoFuente.setColumns(20);
-        taCodigoFuente.setRows(5);
-        jScrollPane1.setViewportView(taCodigoFuente);
 
         taErrores.setColumns(20);
         taErrores.setRows(5);
@@ -167,6 +156,8 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTableReportes);
 
+        jScrollPane2.setViewportView(taCodigoFuente);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -176,12 +167,13 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
                 .addComponent(lbTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(309, 309, 309))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane3)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbErrores))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -194,9 +186,8 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))))
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addComponent(btnCargarArchivo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnGenerarGrafica)
@@ -227,7 +218,7 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
                             .addComponent(btnAnalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbErrores)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -255,28 +246,33 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
         // TODO add your handling code here:
         btnAyuda.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        String ayudaMensaje = "Esta es una aplicación para analizar código fuente utilizando un analizador léxico.\n"
-                            + "1. Carga un archivo de código fuente usando el botón 'Cargar Archivo'.\n"
-                            + "2. Presiona 'Analizar' para obtener una tabla de tokens y visualizar errores.\n"
-                            + "3. Puedes guardar los resultados y el código fuente con el botón 'Guardar'.";
-        JOptionPane.showMessageDialog(null, ayudaMensaje, "Ayuda", JOptionPane.INFORMATION_MESSAGE);
-    }
-});
+            public void actionPerformed(ActionEvent e) {
+                String ayudaMensaje = "Esta es una aplicación para analizar código fuente utilizando un analizador léxico.\n"
+                        + "1. Carga un archivo de código fuente usando el botón 'Cargar Archivo'.\n"
+                        + "2. Presiona 'Analizar' para obtener una tabla de tokens y visualizar errores.\n"
+                        + "3. Puedes guardar los resultados y el código fuente con el botón 'Guardar'.";
+                JOptionPane.showMessageDialog(null, ayudaMensaje, "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
 
 
     }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void btnCargarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarArchivoActionPerformed
-        // TODO add your handling code here:
-        JFileChooser fileChosser = new JFileChooser();
-        int seleccion = fileChosser.showOpenDialog(this);
+     
+        JFileChooser fileChooser = new JFileChooser();
+    int seleccion = fileChooser.showOpenDialog(this);
 
-        if (seleccion == JFileChooser.APPROVE_OPTION) {
-            File archivo = fileChosser.getSelectedFile();
-            Archivo cargarArchivo = new Archivo(archivo);
-            cargarArchivo.mostrarLineas(taCodigoFuente);
-        }
+    if (seleccion == JFileChooser.APPROVE_OPTION) {
+        File archivo = fileChooser.getSelectedFile();
+        Archivo archivoCargado = new Archivo(archivo);
+        DiccionarioColor diccionarioColor = new DiccionarioColor(); // Crea una instancia de tu diccionario de colores
+
+        archivoCargado.mostrarContenidoColoreado(taCodigoFuente, diccionarioColor);
+    }
+        
+        
+        
     }//GEN-LAST:event_btnCargarArchivoActionPerformed
 
     private void btnGenerarGraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarGraficaActionPerformed
@@ -285,19 +281,46 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
 
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
         // TODO add your handling code here:
-      
+
         // Limpia la tabla antes de mostrar nuevos resultados
         DefaultTableModel model = (DefaultTableModel) jTableReportes.getModel();
         model.setRowCount(0);  // Elimina todas las filas
 
         // Obtiene el código fuente de la caja de texto
         String codigoFuente = taCodigoFuente.getText();
-
+/*
+        //Se creo un StyledD para aplicar estilos al JtextPane
+        StyledDocument styledDocument = taCodigoFuente.getStyledDocument();
+        styledDocument.setCharacterAttributes(0, codigoFuente.length(), taCodigoFuente.getStyle("default"), true);
+*/
         // instanciamos la clase analizadorLexico
         AnalizadorLexico analizador = new AnalizadorLexico(codigoFuente);
         List<Token> listaTokens = analizador.getTokens();   //obteniendo la lista de tokens
         List<Token> listaErrores = analizador.getErrores();  //obtener la lista de errores
+/*
+        //Definir los estilos para los siguientes type de tokens
+        Style estiloIdentificadores = styledDocument.addStyle("identificadores", null);
+        StyleConstants.setForeground(estiloIdentificadores, Color.BLACK);
+        Style estiloOperadores = styledDocument.addStyle("operadores", null);
+        StyleConstants.setForeground(estiloOperadores, Color.CYAN);
 
+        for (Token token1 : listaTokens) {
+            
+            int longitudToken = token1.getLexema().length();
+
+            //Aplicamo el estilo correspondiente
+            Style estiloActual = null;
+            if (token1.getTipo().equals("Identificador")) {
+                estiloActual = estiloIdentificadores;
+            } else if (token1.getTipo().equals("Operador")) {
+                estiloActual = estiloOperadores;
+            }
+            if (estiloActual != null) {
+             styledDocument.setCharacterAttributes(longitudToken, longitudToken, estiloActual, false);
+    }
+            taCodigoFuente.setText(codigoFuente);
+        }
+*/
         // Llena la tabla con los tokens analizados
         for (Token token : listaTokens) {
             model.addRow(new Object[]{
@@ -315,12 +338,12 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
 
         }
         //*************************************************************************************
-        
-      
+
+
     }//GEN-LAST:event_btnAnalizarActionPerformed
 
-    
 
+    
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
@@ -370,13 +393,13 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private void btnAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcercaDeActionPerformed
         // TODO add your handling code here:
         btnAcercaDe.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        String acercaDeMensaje = "Analizador Léxico v1.0\n"
-                              + "Desarrollado por [Jerson Estrada]\n"
-                              + "Este programa realiza el análisis léxico de código fuente y muestra resultados en una tabla.";
-        JOptionPane.showMessageDialog(null, acercaDeMensaje, "Acerca de", JOptionPane.INFORMATION_MESSAGE);
-    }
-});
+            public void actionPerformed(ActionEvent e) {
+                String acercaDeMensaje = "Analizador Léxico v1.0\n"
+                        + "Desarrollado por [Jerson Estrada]\n"
+                        + "Este programa realiza el análisis léxico de código fuente y muestra resultados en una tabla.";
+                JOptionPane.showMessageDialog(null, acercaDeMensaje, "Acerca de", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
 
     }//GEN-LAST:event_btnAcercaDeActionPerformed
 
@@ -425,27 +448,14 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTableReportes;
     private javax.swing.JLabel lbErrores;
     private javax.swing.JLabel lbTitulo;
-    private javax.swing.JTextArea taCodigoFuente;
+    private javax.swing.JTextPane taCodigoFuente;
     private javax.swing.JTextArea taErrores;
     // End of variables declaration//GEN-END:variables
-
-    public JTextArea getTaCodigoFuente() {
-        return taCodigoFuente;
-        
-        
-        
-    }
-
-    public StyledDocument getStyledDocument() {
-        return styledDocument;
-    }
-
-
 
 }
