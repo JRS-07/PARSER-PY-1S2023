@@ -46,7 +46,7 @@ public class AnalizadorLexico {
             String lexema = diccionario.coincidenciasDiccionario(cadigoRes);
 
             if (esTokenConocido(lexema)) {
--
+
                 tokens.add(analizarTokenConocido(lexema));
                 actualizarPosicion(lexema);
 
