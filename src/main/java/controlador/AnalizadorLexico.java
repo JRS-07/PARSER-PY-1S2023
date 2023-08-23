@@ -84,9 +84,11 @@ public class AnalizadorLexico {
 //***************************************************************************************
 
     public Token analizarNumero() {
+        
         String lexema = obtenerNumero();
         TipoToken tipoToken = determinarTipoNumero(lexema);
-        return new Token(tipoToken, "", lexema, lineaActual, columnaActual);
+        String patron = getPatron(tipoToken);
+        return new Token(tipoToken, patron, lexema, lineaActual, columnaActual);
     }
 
   
@@ -167,7 +169,8 @@ public class AnalizadorLexico {
 
         String lexema = lexemaBuilder.toString();
         TipoToken tipoToken = esIdentificadorValido(lexema) ? TipoToken.IDENTIFICADOR : TipoToken.ERROR;
-        return new Token(tipoToken, "", lexema, lineaActual, columnaActual);
+        String patron = getPatron(tipoToken);
+        return new Token(tipoToken, patron, lexema, lineaActual, columnaActual);
 
 }
 
@@ -195,7 +198,8 @@ public class AnalizadorLexico {
         }
 
         String lexema = lexemaBuilder.toString();
-        return new Token(TipoToken.COMENTARIO, "", lexema, lineaActual, columnaActual);
+        String patron = getPatron(TipoToken.COMENTARIO);
+        return new Token(TipoToken.COMENTARIO, "#", lexema, lineaActual, columnaActual);
     }
 //*******************************************************************************************
 
@@ -212,7 +216,8 @@ public class AnalizadorLexico {
         if (!esFinDeArchivo() && obtenerCaracterActual() == delimitador) {
             avanzarPosicion(); // Saltar el delimitador final
             String lexema = lexemaBuilder.toString();
-            return new Token(TipoToken.CADENA, "", lexema, lineaActual, columnaActual);
+            String patron = getPatron(TipoToken.CADENA);
+            return new Token(TipoToken.CADENA,patron , lexema, lineaActual, columnaActual);
         } else {
             // Crear token de tipo error con el contenido no cerrado
             String lexema = lexemaBuilder.toString();
@@ -273,6 +278,25 @@ public class AnalizadorLexico {
             columnaActual++;
         }
         indice++;
+    }
+    
+    private String getPatron (TipoToken tipoToken) {
+
+        switch (tipoToken) {
+            case ENTERO:
+                return "[d]+";
+            case DECIMAL:
+                return "[d]+.[d][d]";
+            case IDENTIFICADOR:
+                return "[w_][\\w\\d_]*";
+            case COMENTARIO:
+                return "#";
+            case CADENA:
+                return "\".*?\"|'.*?'";
+
+            default:
+                return "";
+        }
     }
 
     private void actualizarPosicion(String lexema) {

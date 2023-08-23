@@ -73,7 +73,17 @@ public class DiccionarioToken {
         //constantes  Booleanas ***
         this.diccionario.put("True", TipoToken.BOOLEAN);
         this.diccionario.put("False", TipoToken.BOOLEAN);
+        
+        //Expresiones Regulares
+        this.diccionario.put("[d]+", TipoToken.ENTERO);
+        this.diccionario.put("[d]+.[d][d]*", TipoToken.DECIMAL);
+        this.diccionario.put("#*", TipoToken.COMENTARIO);
+
+        this.diccionario.put("[w_][\\w\\d_]*", TipoToken.IDENTIFICADOR);
+
+        this.diccionario.put("\".*?\"|'.*?'", TipoToken.CADENA);
       
+        
     }
     
     public String coincidenciasDiccionario(String codigoRestante) {
