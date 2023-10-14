@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package modelo.analizadorLexico;
 
 /**
  *
@@ -27,6 +27,13 @@ public class Token {
         this.linea = linea;
         this.columna = columna;
         this.patron = patron;
+    }
+    
+       public Token(TipoToken tipo, String lexema, int linea, int columna) {
+        this.tipo = tipo;
+        this.lexema = lexema;
+        this.linea = linea;
+        this.columna = columna;
     }
 
      public String getPatron() {

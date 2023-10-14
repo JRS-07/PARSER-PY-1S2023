@@ -28,10 +28,9 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,48 +56,63 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="lbTitulo" min="-2" pref="281" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" min="-2" pref="483" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="483" max="-2" attributes="0"/>
-                              <Component id="lbErrores" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="btnAnalizar" min="-2" pref="130" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="btnLimpiar" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnGuardar" min="-2" pref="130" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="btnCargarArchivo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnGenerarGrafica" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGenerarReportes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnAyuda" min="-2" pref="113" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnAcercaDe" min="-2" pref="127" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="tfPalabraClave" min="-2" pref="219" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnBuscar" pref="167" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="lbErrores" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jScrollPane2" pref="495" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnAnalizarSintactico" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                                      <Component id="btnLimpiar" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnAnalizar" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="btnGuardar" min="-2" pref="175" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="lbTitulo" min="-2" pref="371" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -110,30 +124,37 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnCargarArchivo" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="btnGenerarGrafica" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btnGenerarReportes" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="btnAyuda" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="btnAcercaDe" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfPalabraClave" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jScrollPane4" min="-2" pref="465" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnLimpiar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="btnAnalizar" alignment="3" max="32767" attributes="0"/>
-                              <Component id="btnGuardar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jScrollPane2" min="-2" pref="314" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jScrollPane2" min="-2" pref="272" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbErrores" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jScrollPane4" min="-2" pref="444" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnAnalizarSintactico" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="btnAnalizar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="47" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnLimpiar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="btnGuardar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -142,7 +163,7 @@
         <Component class="javax.swing.JLabel" name="lbTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Inconsolata Semi Condensed ExtraBold" size="36" style="0"/>
+              <Font name="Inconsolata Semi Condensed ExtraBold" size="36" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ANALIZADOR LEXICO"/>
           </Properties>
@@ -150,7 +171,7 @@
         <Component class="javax.swing.JButton" name="btnCargarArchivo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="14" style="0"/>
+              <Font name="DialogInput" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cargar Archivo"/>
           </Properties>
@@ -158,21 +179,21 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCargarArchivoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnGenerarGrafica">
+        <Component class="javax.swing.JButton" name="btnGenerarReportes">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="14" style="0"/>
+              <Font name="DialogInput" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Generar Graficos"/>
+            <Property name="text" type="java.lang.String" value="Reportes"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarGraficaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarReportesActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnAyuda">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="14" style="0"/>
+              <Font name="DialogInput" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
           </Properties>
@@ -183,7 +204,7 @@
         <Component class="javax.swing.JButton" name="btnAcercaDe">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="14" style="0"/>
+              <Font name="DialogInput" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Acerca de"/>
           </Properties>
@@ -191,35 +212,20 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAcercaDeActionPerformed"/>
           </Events>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextArea" name="taErrores">
-              <Properties>
-                <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="5"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JLabel" name="lbErrores">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="18" style="0"/>
+              <Font name="DialogInput" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Errores...."/>
+            <Property name="text" type="java.lang.String" value="ANALIZADOR SINTACTICO"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnAnalizar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="18" style="0"/>
+              <Font name="DialogInput" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Analizar"/>
+            <Property name="text" type="java.lang.String" value="Analiador Lexico"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnalizarActionPerformed"/>
@@ -228,7 +234,7 @@
         <Component class="javax.swing.JButton" name="btnLimpiar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="18" style="0"/>
+              <Font name="DialogInput" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Limpiar"/>
           </Properties>
@@ -239,7 +245,7 @@
         <Component class="javax.swing.JButton" name="btnGuardar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="DialogInput" size="18" style="0"/>
+              <Font name="DialogInput" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
@@ -257,9 +263,8 @@
             <Component class="javax.swing.JTable" name="jTableReportes">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="4">
+                  <Table columnCount="4" rowCount="4">
                     <Column editable="false" title="Tipo" type="java.lang.Object"/>
-                    <Column editable="false" title="Patron" type="java.lang.Object"/>
                     <Column editable="false" title="Lexema" type="java.lang.Object"/>
                     <Column editable="false" title="Linea" type="java.lang.Object"/>
                     <Column editable="false" title="Columna" type="java.lang.Object"/>
@@ -309,6 +314,60 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
             <Component class="javax.swing.JTextPane" name="taCodigoFuente">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JTextField" name="tfPalabraClave">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="14" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnBuscar">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="DialogInput" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Buscar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAnalizarSintactico">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Analizador Sintactico"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnalizarSintacticoActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="taAnalisisSintactico">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="0"/>
+                </Property>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="5" rowCount="5">
+                    <Column editable="false" title="Tipo" type="java.lang.Object"/>
+                    <Column editable="false" title="Estado" type="java.lang.Object"/>
+                    <Column editable="false" title="Bloque" type="java.lang.Object"/>
+                    <Column editable="false" title="Linea" type="java.lang.Object"/>
+                    <Column editable="false" title="Columna" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

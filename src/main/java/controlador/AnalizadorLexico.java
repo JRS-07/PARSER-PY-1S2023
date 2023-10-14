@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import modelo.TipoToken;
-import modelo.Token;
+import modelo.analizadorLexico.TipoToken;
+import modelo.analizadorLexico.Token;
 
 /**
  *
@@ -60,7 +60,7 @@ public class AnalizadorLexico {
 
             } else if (caracterActual == '#') {
 
-                avanzarPosicion();
+            //    avanzarPosicion();
                 tokens.add(analizarComentario());
 
             } else if (caracterActual == '"' || caracterActual == '\'') {

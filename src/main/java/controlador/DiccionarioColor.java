@@ -7,7 +7,7 @@ package controlador;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
-import modelo.TipoToken;
+import modelo.analizadorLexico.TipoToken;
 
 /**
  *
@@ -19,11 +19,11 @@ public class DiccionarioColor {
 
     public DiccionarioColor() {
         diccionario = new HashMap<>();
-        diccionario.put(TipoToken.IDENTIFICADOR, Color.BLUE);
+        diccionario.put(TipoToken.IDENTIFICADOR, Color.BLACK);
         diccionario.put(TipoToken.ARITMETICO, Color.CYAN);
         diccionario.put(TipoToken.COMPARACION, Color.CYAN);
         diccionario.put(TipoToken.LOGICO, Color.CYAN);
-        diccionario.put(TipoToken.ASIGANCION, Color.CYAN);
+        diccionario.put(TipoToken.ASIGNACION, Color.CYAN);
         diccionario.put(TipoToken.PALABRA_RESERVADA, Color.magenta);
         diccionario.put(TipoToken.ENTERO, Color.RED);
         diccionario.put(TipoToken.DECIMAL, Color.RED);
