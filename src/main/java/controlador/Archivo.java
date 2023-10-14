@@ -17,7 +17,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-import modelo.Token;
+import modelo.analizadorLexico.Token;
 
 /**
  *
@@ -91,7 +91,7 @@ private String contenidoArchivo;
         }
     }
 
-    private AttributeSet obtenerAtributosToken(Token token, DiccionarioColor diccionarioColor) {
+      private AttributeSet obtenerAtributosToken(Token token, DiccionarioColor diccionarioColor) {
         SimpleAttributeSet attrs = new SimpleAttributeSet();
         Color color = diccionarioColor.getColorForToken(token.getTipo());
         StyleConstants.setForeground(attrs, color);

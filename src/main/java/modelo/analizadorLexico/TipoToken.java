@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package modelo.analizadorLexico;
 
 /**
  *
  * @author jerson
  */
 public enum TipoToken {
-      IDENTIFICADOR,
+    IDENTIFICADOR,
     ARITMETICO,
     COMPARACION,
     LOGICO,
-    ASIGANCION,
+    ASIGNACION,
     PALABRA_RESERVADA,
     ENTERO,
     DECIMAL,
@@ -23,4 +23,5 @@ public enum TipoToken {
     DESCONOCIDO,
     DELIMITADORES,
     ERROR,
+    FIN_DE_LISTA
 }
